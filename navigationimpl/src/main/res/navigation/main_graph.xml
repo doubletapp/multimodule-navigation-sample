@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/feature1Fragment">
+
+    <fragment
+        android:id="@+id/feature1Fragment"
+        android:name="ai.doubletapp.sample.navigation.feature1.Feature1Fragment"
+        android:label="Feature1Fragment"
+        tools:layout="@layout/fragment_feature1">
+        <action
+            android:id="@+id/from_feature1_to_feature2"
+            app:destination="@id/feature2Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/feature2Fragment"
+        android:name="ai.doubletapp.sample.navigation.feature2.Feature2Fragment"
+        android:label="Feature2Fragment"
+        tools:layout="@layout/fragment_feature2">
+        <action
+            android:id="@+id/from_feature2_to_feature3"
+            app:destination="@id/feature3Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/feature3Fragment"
+        android:name="ai.doubletapp.sample.navigation.feature3.Feature3Fragment"
+        android:label="Feature3Fragment"
+        tools:layout="@layout/fragment_feature3">
+        <action
+            android:id="@+id/from_feature3_to_feature1"
+            app:destination="@id/feature1Fragment"
+            app:popUpTo="@id/feature1Fragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="args"
+            app:argType="ai.doubletapp.sample.navigation.feature3.navigation.Feature3Args" />
+    </fragment>
+
+</navigation>

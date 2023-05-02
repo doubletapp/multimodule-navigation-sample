@@ -1,0 +1,51 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 24
+        targetSdk 33
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    def daggerVersion = "2.44"
+    def navigationVersion = "2.5.3"
+
+    implementation("androidx.core:core-ktx:1.9.0")
+    implementation("androidx.appcompat:appcompat:1.6.0")
+    implementation("com.google.android.material:material:1.8.0")
+    implementation("androidx.navigation:navigation-fragment-ktx:$navigationVersion")
+    implementation("androidx.navigation:navigation-ui-ktx:$navigationVersion")
+    implementation("com.google.dagger:dagger:$daggerVersion")
+    kapt("com.google.dagger:dagger-compiler:$daggerVersion")
+
+    api project(":navigationapi")
+    implementation project(":di")
+    implementation project(":feature1")
+    implementation project(":feature2")
+    implementation project(":feature3")
+}

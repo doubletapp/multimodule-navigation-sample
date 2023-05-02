@@ -1,0 +1,22 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Navigation Sample"
+include ':app'
+include ':di'
+include ':navigationapi'
+include ':navigationimpl'
+include ':feature1'
+include ':feature2'
+include ':feature3'

@@ -1,0 +1,6 @@
+<resources>
+    <string name="feature3_title">Feature 3</string>
+    <string name="feature3_args">Received args: %1$s</string>
+    <string name="feature3_button_to_feature_1">To Feature 1</string>
+    <string name="feature3_button_back">Back</string>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="feature2_title">Feature 2</string>
+    <string name="feature2_button_to_feature_3">To Feature 3</string>
+    <string name="feature2_button_back">Back</string>
+</resources>
